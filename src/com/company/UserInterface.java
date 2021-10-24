@@ -14,20 +14,20 @@ public class UserInterface {
 
     public void start(){
         System.out.println("""
-            Welcome to my text based adventure game!
-            This is a personal project I'm doing, based on a school assignment.
-            I hope you enjoy!
+        Welcome to my text based adventure game!
+        This is a personal project I'm doing, based on a school assignment.
+        I hope you enjoy!
         """);
     }
 
     public void commands(){
         boolean isRunning = true;
         Scanner input = new Scanner(System.in).useLocale(Locale.ENGLISH);
+        System.out.println("What do you want to do?");
 
         Acceptable acceptable = Acceptable.NOT_EXISTING;
 
         while (isRunning){
-        System.out.println("What do you want to do?");
 
 
         String userInput = input.nextLine().toLowerCase();
@@ -83,12 +83,14 @@ public class UserInterface {
                 }
                 break;
             }
+            System.out.println();
+            System.out.println("What do you want to do?");
         }
     }
 
     public void help(){
         System.out.println("""
-            Insert help text here  
+        Insert help text here  
         """);
     }
 
