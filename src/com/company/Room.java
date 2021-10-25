@@ -60,8 +60,12 @@ public class Room {
         return south;
     }
 
-    //Room name
+    //Room information
     public String getRoomName(){
         return this.roomName;
+    }
+
+    public String getDescription(){
+        return this.description;
     }
 }

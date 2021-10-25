@@ -20,17 +20,27 @@ public class UserInterface {
         """);
     }
 
+
+    public void help(){
+        System.out.println("""
+        The game is text-based - so you type what you want to do.
+        Here is what you can type to do something:
+         "help" to get more help;
+         "north", "south", "east" and "west" to move around
+         "look" to look around at the room you're in
+        """);
+    }
+
     public void commands(){
         boolean isRunning = true;
         Scanner input = new Scanner(System.in).useLocale(Locale.ENGLISH);
-        System.out.println("What do you want to do?");
 
         Acceptable acceptable = Acceptable.NOT_EXISTING;
 
-        while (isRunning){
 
 
         String userInput = input.nextLine().toLowerCase();
+
 
         switch(userInput){
             //walk statements
@@ -43,7 +53,7 @@ public class UserInterface {
                     System.out.println("You can't go that way");
                 } else if (acceptable == Acceptable.ACCEPTABLE){
                     System.out.println("You go north");
-                    System.out.println("you are in " + application.getPlayerRoom());
+                    System.out.println("you are in " + application.getCurrentRoomName());
                 }
                 break;
             case "go south":
@@ -55,7 +65,7 @@ public class UserInterface {
                     System.out.println("You can't go that way");
                 } else if (acceptable == Acceptable.ACCEPTABLE){
                     System.out.println("You go south");
-                    System.out.println("you are in " + application.getPlayerRoom());
+                    System.out.println("you are in " + application.getCurrentRoomName());
                 }
                 break;
             case "go east":
@@ -67,7 +77,7 @@ public class UserInterface {
                     System.out.println("You can't go that way");
                 } else if (acceptable == Acceptable.ACCEPTABLE){
                     System.out.println("You go east");
-                    System.out.println("you are in " + application.getPlayerRoom());
+                    System.out.println("you are in " + application.getCurrentRoomName());
                 }
                 break;
             case "go west":
@@ -79,22 +89,17 @@ public class UserInterface {
                     System.out.println("You can't go that way");
                 } else if (acceptable == Acceptable.ACCEPTABLE){
                     System.out.println("You go west");
-                    System.out.println("you are in " + application.getPlayerRoom());
+                    System.out.println("you are in " + application.getCurrentRoomName());
                 }
                 break;
-            }
-            System.out.println();
-            System.out.println("What do you want to do?");
+            case "help":
+                help();
+            case "look":
+                System.out.println("You are in " + application.getCurrentRoomName());
+                System.out.println(application.getCurrentRoomDescrption());
+
         }
-    }
-
-    public void help(){
-        System.out.println("""
-        Insert help text here  
-        """);
-    }
-
-
+        }
 
 }
 

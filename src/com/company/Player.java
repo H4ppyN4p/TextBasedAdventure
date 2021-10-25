@@ -15,4 +15,8 @@ public class Player {
     public String getCurrentRoomName(){
         return currentRoom.getRoomName();
     }
+
+    public String getCurrentRoomDescription(){
+        return currentRoom.getDescription();
+    }
 }

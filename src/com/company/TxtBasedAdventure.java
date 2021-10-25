@@ -1,7 +1,7 @@
 package com.company;
 
 public class TxtBasedAdventure {
-
+    private boolean isRunning = true;
     private Map map;
     private UserInterface ui;
 
@@ -13,14 +13,15 @@ public class TxtBasedAdventure {
 
     public void start(){
         ui.start();
-        ui.commands();
+        ui.help();
+        while (isRunning == true) {
+            ui.commands();
+        }
     }
 
 
 
     public static void main(String[] args) {
-
-        boolean isRunning = true;
 
         TxtBasedAdventure txtBased = new TxtBasedAdventure();
         txtBased.start();
@@ -54,8 +55,12 @@ public class TxtBasedAdventure {
     }
 
     //Player room
-    public String getPlayerRoom(){
-        return map.getPlayerRoom();
+    public String getCurrentRoomName(){
+        return map.getCurrentRoomName();
+    }
+
+    public String getCurrentRoomDescrption(){
+        return map.getCurrentRoomDescrption();
     }
 
 

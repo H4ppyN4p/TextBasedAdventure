@@ -14,6 +14,7 @@ public class Map {
     Room room9 = new Room("room 9", "This is room 9.");
 
     public Map(){
+
         room1.setSouth(room4);
         room1.setEast(room2);
         room2.setEast(room3);
@@ -82,7 +83,11 @@ public class Map {
     }
 
     //Player room
-    public String getPlayerRoom(){
+    public String getCurrentRoomName(){
         return player.getCurrentRoomName();
+    }
+
+    public String getCurrentRoomDescrption(){
+        return player.getCurrentRoomDescription();
     }
 }
