@@ -1,6 +1,11 @@
 package com.company;
 
+import java.util.ArrayList;
+
 public class Room {
+
+    private ArrayList<Item> itemsNormalsInRoom = new ArrayList<>();
+
 
     private String roomName;
     private String description;
@@ -41,6 +46,33 @@ public class Room {
             this.west = west;
             west.setEast(this);
         }
+    }
+    //Item handling
+    public void setItem(Item itemName){
+        itemsNormalsInRoom.add(itemName);
+    }
+
+    public Item takeItem(String itemName) {
+        Item itemVariable = new Item("empty", "empty");
+
+        for (int i = 0; i < itemsNormalsInRoom.size(); i++){
+            itemVariable = itemsNormalsInRoom.get(i);
+
+            if (itemVariable.getName().equals(itemName)) {
+                itemsNormalsInRoom.remove(i);
+                i = itemsNormalsInRoom.size();
+            }
+
+            else {
+                itemVariable = null;
+            }
+        }
+
+        return itemVariable;
+    }
+
+    public ArrayList<Item> getItems(){
+        return itemsNormalsInRoom;
     }
 
     // Get Directions

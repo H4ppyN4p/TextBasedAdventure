@@ -28,58 +28,22 @@ public class Map {
 
     }
 
+
     //Walk methods
     public Acceptable goNorth(){
-        Acceptable acceptable = Acceptable.NOT_EXISTING;
-
-        if (player.currentRoom.getNorth() == null) {
-            acceptable = Acceptable.NOT_ACCEPTABLE;
-        } else {
-            player.currentRoom = player.currentRoom.getNorth();
-            acceptable = Acceptable.ACCEPTABLE;
-        }
-
-        return acceptable;
+      return player.goNorth();
     }
 
     public Acceptable goSouth(){
-        Acceptable acceptable = Acceptable.NOT_EXISTING;
-
-        if (player.currentRoom.getSouth() == null) {
-            acceptable = Acceptable.NOT_ACCEPTABLE;
-        } else {
-            player.currentRoom = player.currentRoom.getSouth();
-            acceptable = Acceptable.ACCEPTABLE;
-        }
-
-        return acceptable;
+        return player.goSouth();
     }
 
     public Acceptable goEast(){
-        Acceptable acceptable = Acceptable.NOT_EXISTING;
-
-        if (player.currentRoom.getEast() == null) {
-            acceptable = Acceptable.NOT_ACCEPTABLE;
-        } else {
-            player.currentRoom = player.currentRoom.getEast();
-            acceptable = Acceptable.ACCEPTABLE;
-        }
-
-        return acceptable;
+        return player.goEast();
     }
 
     public Acceptable goWest(){
-        Acceptable acceptable = Acceptable.NOT_EXISTING;
-
-        if (player.currentRoom.getWest() == null) {
-            acceptable = Acceptable.NOT_ACCEPTABLE;
-
-        } else {
-            player.currentRoom = player.currentRoom.getWest();
-            acceptable = Acceptable.ACCEPTABLE;
-        }
-
-        return acceptable;
+       return player.goWest();
     }
 
     //Player room
