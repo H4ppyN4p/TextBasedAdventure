@@ -1,6 +1,7 @@
 package com.company;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Player {
 
@@ -21,6 +22,10 @@ public class Player {
 
     public String getCurrentRoomDescription(){
         return currentRoom.getDescription();
+    }
+
+    public List getItemsCurrentRoom(){
+        return currentRoom.getItems();
     }
 
     //Walk methods

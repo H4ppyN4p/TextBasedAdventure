@@ -1,5 +1,8 @@
 package com.company;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class TxtBasedAdventure {
     private boolean isRunning = true;
     private Map map;
@@ -8,6 +11,7 @@ public class TxtBasedAdventure {
     public TxtBasedAdventure(){
         map = new Map();
         ui = new UserInterface(this);
+
 
     }
 
@@ -63,6 +67,9 @@ public class TxtBasedAdventure {
         return map.getCurrentRoomDescrption();
     }
 
+    public List itemsInRoom(){
+        return map.itemsInRoom();
+    }
 
 
 }

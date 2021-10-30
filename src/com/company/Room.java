@@ -1,6 +1,7 @@
 package com.company;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Room {
 
@@ -71,7 +72,7 @@ public class Room {
         return itemVariable;
     }
 
-    public ArrayList<Item> getItems(){
+    public List getItems(){
         return itemsNormalsInRoom;
     }
 
@@ -99,5 +100,13 @@ public class Room {
 
     public String getDescription(){
         return this.description;
+    }
+
+    //test stuff
+    public void testInventory(){
+        for (Item item: itemsNormalsInRoom
+             ) {
+            System.out.println(item);
+        }
     }
 }

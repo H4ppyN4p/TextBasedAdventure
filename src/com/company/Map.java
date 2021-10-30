@@ -1,8 +1,15 @@
 package com.company;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Map {
+
+    private ArrayList<Item> itemsInRoom = new ArrayList<>();
+
     Player player = new Player();
 
+    //Create rooms
     Room room1 = new Room("room 1", "This is room 1.");
     Room room2 = new Room("room 2", "This is room 2.");
     Room room3 = new Room("room 3", "This is room 3.");
@@ -13,8 +20,11 @@ public class Map {
     Room room8 = new Room("room 8", "This is room 8.");
     Room room9 = new Room("room 9", "This is room 9.");
 
+
+
     public Map(){
 
+        //Set rooms
         room1.setSouth(room4);
         room1.setEast(room2);
         room2.setEast(room3);
@@ -25,6 +35,13 @@ public class Map {
         room7.setEast(room8);
         room8.setEast(room9);
         player.currentRoom = room1;
+
+        //Create and set items
+        Item lamp = new Item("lamp", "a shiny brass lamp. It's not shiny at all.");
+        Item duck = new Item("duck","A single rubber-duck. It looks cute.");
+
+        room1.setItem(lamp);
+        room1.setItem(duck);
 
     }
 
@@ -46,6 +63,9 @@ public class Map {
        return player.goWest();
     }
 
+
+
+
     //Player room
     public String getCurrentRoomName(){
         return player.getCurrentRoomName();
@@ -53,5 +73,9 @@ public class Map {
 
     public String getCurrentRoomDescrption(){
         return player.getCurrentRoomDescription();
+    }
+
+    public List itemsInRoom(){
+        return player.getItemsCurrentRoom();
     }
 }
