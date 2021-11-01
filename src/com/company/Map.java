@@ -10,15 +10,15 @@ public class Map {
     Player player = new Player();
 
     //Create rooms
-    Room room1 = new Room("room 1", "This is room 1.");
-    Room room2 = new Room("room 2", "This is room 2.");
-    Room room3 = new Room("room 3", "This is room 3.");
-    Room room4 = new Room("room 4", "This is room 4.");
-    Room room5 = new Room("room 5", "This is room 5.");
-    Room room6 = new Room("room 6", "This is room 6.");
-    Room room7 = new Room("room 7", "This is room 7.");
-    Room room8 = new Room("room 8", "This is room 8.");
-    Room room9 = new Room("room 9", "This is room 9.");
+    Room room1 = new Room("room 1", "This is room 1 - a dark room");
+    Room room2 = new Room("room 2", "This is room 2 - a somewhat dark room");
+    Room room3 = new Room("room 3", "This is room 3 - a somewhat less dark room");
+    Room room4 = new Room("room 4", "This is room 4 - a somewhat light room");
+    Room room5 = new Room("room 5", "This is room 5 - a more light room");
+    Room room6 = new Room("room 6", "This is room 6 - a somewhat bright room");
+    Room room7 = new Room("room 7", "This is room 7 - a bright room");
+    Room room8 = new Room("room 8", "This is room 8 - a really bright room");
+    Room room9 = new Room("room 9", "This is room 9 - a blindingly bright room");
 
 
 
@@ -37,8 +37,8 @@ public class Map {
         player.currentRoom = room1;
 
         //Create and set items
-        Item lamp = new Item("lamp", "a shiny brass lamp. It's not shiny at all.");
-        Item duck = new Item("duck","A single rubber-duck. It looks cute.");
+        Item lamp = new Item("lamp", "A brass lamp");
+        Item duck = new Item("duck","A rubber duck");
 
         room1.setItem(lamp);
         room1.setItem(duck);

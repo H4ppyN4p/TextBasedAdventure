@@ -99,12 +99,16 @@ public class UserInterface {
                 System.out.println("You are in " + application.getCurrentRoomName());
                 System.out.println(application.getCurrentRoomDescrption());
 
-                ArrayList<Item> itemsInRoom = application.itemsInRoom();
+                List<Item> itemsInRoom = application.itemsInRoom();
 
-                for (int i = 0; 0 < itemsInRoom.size(); i++){
-                    System.out.println();
-
+                System.out.println();
+                System.out.println("Insidet the room there are: ");
+                for (Item item: itemsInRoom
+                     ) {
+                    System.out.println("- " + item.getDescription());
                 }
+                
+
 
 
         }
